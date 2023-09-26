@@ -2,7 +2,7 @@ package entities;
 
 import java.time.LocalDate;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa> {
 	
 	private String nome;
 	private LocalDate dataNacimento;
@@ -27,6 +27,11 @@ public class Pessoa {
 
 	public void setDataNacimento(LocalDate dataNacimento) {
 		this.dataNacimento = dataNacimento;
+	}
+
+	@Override
+	public int compareTo(Pessoa pessoa) {
+		return nome.compareTo(pessoa.nome);
 	}
 	
 	
